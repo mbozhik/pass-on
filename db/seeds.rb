@@ -34,12 +34,16 @@ end
 def create_requests(users)
   users.each do |user|
     next if user.is_admin?
-    
+
     (1..2).each do |i|
       request_data = {
         title: "Custom Request #{i} for #{user.email}",
         description: "Custom Description for Request #{i}",
-        direction: "Custom Direction for Request #{i}",
+        from_location: "Custom From Location for Request #{i}",
+        to_location: "Custom To Location for Request #{i}",
+        from_date: Time.now,
+        to_date: Time.now + i.days,
+        requester_link: "Custom Link for Request #{i}",
         user: user
       }
 
@@ -48,5 +52,6 @@ def create_requests(users)
     end
   end
 end
+
 
 seed

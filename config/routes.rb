@@ -7,9 +7,8 @@ Rails.application.routes.draw do
 
   resources :requests, only: [:index, :show, :edit, :update, :destroy]
 
-  get 'welcome/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "welcome#index"
+  root "requests#index"
 end

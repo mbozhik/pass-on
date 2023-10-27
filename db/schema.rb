@@ -10,14 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_27_161341) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_27_223143) do
   create_table "requests", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.string "direction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.string "from_location"
+    t.string "to_location"
+    t.datetime "from_date"
+    t.datetime "to_date"
+    t.string "requester_link"
   end
 
   create_table "users", force: :cascade do |t|

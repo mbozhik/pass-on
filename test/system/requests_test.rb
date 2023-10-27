@@ -15,7 +15,6 @@ class RequestsTest < ApplicationSystemTestCase
     click_on "New request"
 
     fill_in "Description", with: @request.description
-    fill_in "Direction", with: @request.direction
     fill_in "Title", with: @request.title
     click_on "Create Request"
 
@@ -28,7 +27,6 @@ class RequestsTest < ApplicationSystemTestCase
     click_on "Edit this request", match: :first
 
     fill_in "Description", with: @request.description
-    fill_in "Direction", with: @request.direction
     fill_in "Title", with: @request.title
     click_on "Update Request"
 

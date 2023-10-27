@@ -3,9 +3,7 @@
 one:
   title: MyString
   description: MyString
-  direction: MyString
 
 two:
   title: MyString
   description: MyString
-  direction: MyString
