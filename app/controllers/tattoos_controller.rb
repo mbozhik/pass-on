@@ -39,11 +39,6 @@ class TattoosController < ApplicationController
     @tattoo.user = current_user
 
 
-    if params[:tattoo][:tattoo_image].present?
-      @tattoo.tattoo_image = params[:tattoo][:tattoo_image]
-    else
-      @tattoo.tattoo_image = ''
-    end
 
     respond_to do |format|
       if @tattoo.save
@@ -90,6 +85,6 @@ class TattoosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tattoo_params
-      params.require(:tattoo).permit(:title, :specialization, :tattoo_image)
+      params.require(:tattoo).permit(:title, :specialization)
     end
 end
