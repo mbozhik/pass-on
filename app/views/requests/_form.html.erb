@@ -1,6 +1,6 @@
-<%= form_with(model: request, class: "contents") do |form| %>
+<%= form_with(model: [@user, @request], url: user_requests_path(@user), class: "contents") do |form| %>
   <% if request.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+    <div id="error_explanation" class="px-3 py-2 mt-3 font-medium text-red-500 rounded-lg bg-red-50">
       <h2><%= pluralize(request.errors.count, "error") %> prohibited this request from being saved:</h2>
 
       <ul>

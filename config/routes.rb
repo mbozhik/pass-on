@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  resources :requests
   devise_for :users
-  # resources :tattoos
-  
+
+  resources :users do
+    resources :requests
+  end
+
+  resources :requests, only: [:index, :show, :edit, :update, :destroy]
+
   get 'welcome/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

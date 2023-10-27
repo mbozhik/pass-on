@@ -9,19 +9,21 @@ class RequestsController < ApplicationController
   # GET /requests/1 or /requests/1.json
   def show
   end
-
-  # GET /requests/new
+  
+  # GET /users/:user_id/requests/new
   def new
-    @request = Request.new
+    @user = User.find(params[:user_id]) # Find the user based on user_id
+    @request = @user.requests.build # Build a new request associated with the user
   end
 
   # GET /requests/1/edit
   def edit
   end
 
-  # POST /requests or /requests.json
+  # POST /users/:user_id/requests
   def create
-    @request = Request.new(request_params)
+    @user = User.find(params[:user_id]) # Find the user
+    @request = @user.requests.build(request_params) # Build the request associated with the user
 
     respond_to do |format|
       if @request.save
