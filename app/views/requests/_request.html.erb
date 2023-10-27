@@ -1,27 +1,29 @@
-<article id="<%= dom_id request %>">
-  <p class="my-5">
-    <strong class="block mb-1 font-medium">Title:</strong>
-    <%= request.user.id %>
-  </p>
+<%= link_to request do %>
+  <article id="<%= dom_id request %>">
+    <p class="my-5">
+      <strong class="block mb-1 font-medium">User:</strong>
+      <%= request.user.id %>
+    </p>
 
-  <p class="my-5">
-    <strong class="block mb-1 font-medium">Title:</strong>
-    <%= request.title %>
-  </p>
+    <p class="my-5">
+      <strong class="block mb-1 font-medium">Title:</strong>
+      <%= request.title %>
+    </p>
 
-  <p class="my-5">
-    <strong class="block mb-1 font-medium">Description:</strong>
-    <%= request.description %>
-  </p>
+    <p class="my-5">
+      <strong class="block mb-1 font-medium">Description:</strong>
+      <%= request.description %>
+    </p>
 
-  <p class="my-5">
-    <strong class="block mb-1 font-medium">Direction:</strong>
-    <%= request.direction %>
-  </p>
+    <p class="my-5">
+      <strong class="block mb-1 font-medium">Direction:</strong>
+      <%= request.direction %>
+    </p>
 
-  <% if action_name != "show" %>
-    <%= link_to "Show this request", request, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to "Edit this request", edit_request_path(request), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
-</div>
+    <% if action_name != "show" %>
+      <hr class="mt-6">
+      <%= link_to "Show this request", request, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <%= link_to "Edit this request", edit_request_path(request), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <% end %>
+  </article>
+<% end %>
