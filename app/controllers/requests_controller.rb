@@ -12,13 +12,17 @@ class RequestsController < ApplicationController
   
   # GET /users/:user_id/requests/new
   def new
-    @user = User.find(params[:user_id]) # Find the user based on user_id
-    @request = @user.requests.build # Build a new request associated with the user
+    @user = User.find(params[:user_id])
+    @request = @user.requests.build
   end
-
+  
   # GET /requests/1/edit
   def edit
+    @request = Request.find(params[:id])
+    @user = @request.user
   end
+
+
 
   # POST /users/:user_id/requests
   def create
