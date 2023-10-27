@@ -8,7 +8,7 @@ class Ability
 
     return unless user.present?
     can :create, Request
-    can :manage, Request, user_id: user.id
+    can [:read, :update, :destroy], Request, user_id: user.id
 
     # Define abilities for the user here. For example:
     #

@@ -22,8 +22,6 @@ class RequestsController < ApplicationController
     @user = @request.user
   end
 
-
-
   # POST /users/:user_id/requests
   def create
     @user = User.find(params[:user_id]) # Find the user
