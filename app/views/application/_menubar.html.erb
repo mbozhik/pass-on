@@ -1,7 +1,7 @@
-<nav class="flex justify-between items-center pt-[8vh] pb-[5vh]">
+<nav class="flex justify-between  items-center pt-[8vh] pb-[5vh]">
   <%= link_to requests_url do %>
-<img class="" src="../../../logo.png" alt="">  <% end %>
-  <ul class="flex text-2xl uppercase gap-7">
+<img class="sm:w-w-32" src="../../../logo.png" alt="">  <% end %>
+  <ul class="flex text-2xl uppercase sm:gap-3 gap-7 sm:flex-col">
     <% if user_signed_in? %>
       <%= link_to current_user.email, edit_user_registration_path, class: "hover:text-white duration-200"%>
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "hover:text-white duration-200" %>
