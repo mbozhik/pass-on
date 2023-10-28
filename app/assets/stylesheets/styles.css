@@ -1,55 +1,7 @@
-.nav_group {
-  display: flex;
-  gap: 1rem;
+#BG_GRADIENT {
+  background: linear-gradient(0deg, #fff 0%, #ff6f30 100%);
 }
 
-.nav_group a:hover {
-  text-decoration: underline;
-}
-
-.master-card {
-  text-decoration: none;
-}
-
-mark {
-  padding: 0.25rem 0.5rem;
-  background-color: #19b3e6;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin-bottom: 1rem;
-}
-
-img {
-  margin-bottom: 1rem;
-}
-
-.main-text {
-  font-size: 7rem;
-  margin-top: 3rem;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-hr {
-  height: 0;
-  border: 0;
-  border-top: 3px solid var(--muted-border-color);
-  color: inherit;
-}
-
-article img {
-  width: 30vw;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-}
-
-.tattoos.admin.card img {
-  width: 1vw;
+#BUTTON_GRADIENT {
+  background: linear-gradient(0deg, #ff6d5f 11.4%, #ff8d3a 115.64%);
 }

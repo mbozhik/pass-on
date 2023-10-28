@@ -1,16 +1,17 @@
 <div class="w-full">
   <% if notice.present? %>
-    <p class="inline-block px-3 py-2 mb-5 font-medium text-green-500 rounded-lg bg-green-50" id="notice"><%= notice %></p>
+    <p class="px-5 py-2 mb-3 bg-white w-fit border-2 border-custom-[#707070] rounded-lg font-medium" id="notice"><%= notice %></p>
+
   <% end %>
 
   <div class="flex items-center justify-between">
     
     <% if user_signed_in? %>
-      <%= link_to "New Request", new_user_request_path(current_user) %>
+      <%= link_to "Новая заявка", new_user_request_path(current_user), class: "px-10 py-3 text-lg font-medium rounded-md w-full text-center hover:opacity-80 duration-200", id: "BUTTON_GRADIENT" %>
     <% end %>
   </div>
 
-  <div id="requests" class="min-w-full">
+  <div id="requests" class="grid grid-cols-2 mt-10 gap-7 mb-[10vh] sm:grid-cols-1">
     <%= render @requests %>
   </div>
 </div>

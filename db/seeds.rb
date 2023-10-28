@@ -37,10 +37,10 @@ def create_requests(users)
 
     (1..2).each do |i|
       request_data = {
-        title: "Custom Request #{i} for #{user.email}",
+        title: "Custom Request",
         description: "Custom Description for Request #{i}",
-        from_location: "Custom From Location for Request #{i}",
-        to_location: "Custom To Location for Request #{i}",
+        from_location: "Custom",
+        to_location: "From",
         from_date: Time.now,
         to_date: Time.now + i.days,
         requester_link: "Custom Link for Request #{i}",
