@@ -8,6 +8,7 @@ class RequestsController < ApplicationController
 
   # GET /requests/1 or /requests/1.json
   def show
+    @display_info = true
   end
   
   # GET /users/:user_id/requests/new

@@ -1,49 +1,47 @@
-<article id="<%= dom_id request %>">
-  <p class="my-5">
-    <%= link_to request.user.email, request.requester_link, target: "_blank" %>
-  </p>
-
+<article id="<%= dom_id request %>" class="p-4 bg-white border-2 border-custom-[#707070] rounded-lg hover:shadow-xl duration-300 hover:scale-[101%]">
   <%= link_to request do %>
-    <p class="my-5">
+    <p class="text-3xl font-semibold">
       <%= request.title %>
     </p>
   <% end %>
 
-  <p class="my-5">
-    <strong class="block mb-1 font-medium">Description:</strong>
-    <%= request.description %>
+  <p class="text-lg underline hover:no-underline">
+    <%= link_to request.user.email, request.requester_link, target: "_blank" %>
   </p>
 
-  <p class="my-5">
-    <strong class="block mb-1 font-medium">From Location:</strong>
-    <%= request.from_location %>
-  </p>
+  <%= link_to request do %>
+    <div class="mt-3 text-lg">
+      <div class="flex gap-1">
+        <%= request.from_location %>
+        <span>→</span>
+        <%= request.to_location %>
+      </div>
 
-  <p class="my-5">
-    <strong class="block mb-1 font-medium">To Location:</strong>
-    <%= request.to_location %>
-  </p>
+      <div class="flex gap-1">
+        <%= request.from_date.strftime('%B %d') %>
+        <span>→</span>
+        <%= request.to_date.strftime('%B %d') %>
+      </div>
+    </div>
+  <% end %>
 
-  <p class="my-5">
-    <strong class="block mb-1 font-medium">From Date:</strong>
-    <%= request.from_date.strftime('%B %d') %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block mb-1 font-medium">To Date:</strong>
-    <%= request.to_date.strftime('%B %d') %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block mb-1 font-medium">Requester Link:</strong>
-    <%= request.requester_link %>
-  </p>
+  <% if @display_info == true %>
+    <p>
+      <strong>Description:</strong>
+      <%= request.description %>
+    </p>
+    <p>
+      <strong>Requester Link:</strong>
+      <%= request.requester_link %>
+    </p>
+  <% end %>
 
   <% if action_name != "show" %>
-    <hr class="mt-6">
     <% if request.user == current_user %>
-      <%= link_to "Edit this request", edit_request_path(request), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-      <%= button_to "Destroy this request", request, method: :delete %>
+      <div class="flex gap-5 mt-5">
+        <%= link_to "Edit this request", edit_request_path(request), class: "underline hover:no-underline duration-200" %>
+        <%= button_to "Destroy this request", request, method: :delete, class: "underline hover:no-underline duration-200" %>
+      </div>
     <% end %>
   <% end %>
 </article>

@@ -1,14 +1,13 @@
-<nav>
-  <ul class="nav_group">
-      <%= link_to "Requests", requests_url %>
+<nav class="flex justify-between items-center pt-[8vh] pb-[5vh]">
+  <%= link_to requests_url do %>
+<img class="" src="../../../logo.png" alt="">  <% end %>
+  <ul class="flex text-2xl uppercase gap-7">
+    <% if user_signed_in? %>
+      <%= link_to current_user.email, edit_user_registration_path, class: "hover:text-white duration-200"%>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "hover:text-white duration-200" %>
+    <% else %>
+      <%= link_to "Log in", new_user_session_path, class: "hover:text-white duration-200" %>
+      <%= link_to "Register", new_user_registration_path, class: "hover:text-white duration-200" %>
+    <% end %>
   </ul>
-    <ul class="nav_group">
-      <% if user_signed_in? %>
-        <%= link_to current_user.email, edit_user_registration_path %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "Log in", new_user_session_path %>
-        <%= link_to "Register", new_user_registration_path %>
-      <% end %>
-    </ul>
 </nav>
