@@ -7,8 +7,10 @@
     <%= render @request %>
 
     <% if @request.user == current_user %>
-      <%= link_to "Edit this request", edit_request_path(@request), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      <%= button_to "Destroy this request", @request, method: :delete %>
+      <div class="flex gap-5 mt-5">
+      <%= link_to "Edit this request", edit_request_path(@request), class: "underline hover:no-underline duration-200" %>
+      <%= button_to "Destroy this request", @request, method: :delete, class: "underline hover:no-underline duration-200" %>
+      </div>
     <% end %>
   </div>
 </div>

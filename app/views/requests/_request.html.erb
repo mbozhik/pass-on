@@ -1,4 +1,4 @@
-<article id="<%= dom_id request %>" class="p-4 bg-white border-2 border-custom-[#707070] rounded-lg hover:shadow-xl duration-300 hover:scale-[101%]">
+<article id="<%= dom_id request %>" class="p-4 w-full bg-white border-2 border-custom-[#707070] rounded-lg hover:shadow-xl duration-300 hover:scale-[101%]">
   <%= link_to request do %>
     <p class="text-3xl font-semibold">
       <%= request.title %>
@@ -26,21 +26,17 @@
   <% end %>
 
   <% if @display_info == true %>
+    <hr class="my-3 border-[1px]">
     <p>
-      <strong>Description:</strong>
       <%= request.description %>
-    </p>
-    <p>
-      <strong>Requester Link:</strong>
-      <%= request.requester_link %>
     </p>
   <% end %>
 
   <% if action_name != "show" %>
     <% if request.user == current_user %>
       <div class="flex gap-5 mt-5">
-        <%= link_to "Edit this request", edit_request_path(request), class: "underline hover:no-underline duration-200" %>
-        <%= button_to "Destroy this request", request, method: :delete, class: "underline hover:no-underline duration-200" %>
+        <%= link_to "Изменить заявку", edit_request_path(request), class: "underline hover:no-underline duration-200" %>
+        <%= button_to "Удалить заявку", request, method: :delete, class: "underline hover:no-underline duration-200" %>
       </div>
     <% end %>
   <% end %>
